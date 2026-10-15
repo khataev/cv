@@ -1,0 +1,156 @@
+/* Компактная вёрстка резюме для печати в PDF (Chrome/Puppeteer). */
+
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+body {
+  font-family: -apple-system, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+  color: #1a1a1a;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Имя */
+h1 {
+  font-size: 20pt;
+  line-height: 1.15;
+  margin: 0 0 2pt;
+  padding: 0;
+  border: none;
+}
+
+/* Заголовки секций: НАВЫКИ, ОПЫТ РАБОТЫ, ...
+   Общее правило объявлено раньше частного случая ниже, чтобы порядок
+   в файле совпадал с порядком применения. */
+h2 {
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 10pt 0 4pt;
+  padding: 0 0 2pt;
+  border-bottom: 1px solid #d0d0d0;
+  break-after: avoid;
+}
+
+/* Целевая должность под именем — единственный h2, идущий сразу за h1.
+   Переопределяет правило выше за счёт специфичности (0-0-2 против 0-0-1). */
+h1 + h2 {
+  font-size: 12pt;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: #444;
+  margin: 0 0 6pt;
+  padding: 0;
+  border-bottom: none;
+}
+
+/* Должность и даты — одна строка: должность слева, даты справа.
+   flex вместо float: float отрывался от заголовка на разрыве страниц
+   и уезжал на предыдущую, а break-after: avoid на него не действует. */
+h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12pt;
+  font-size: 10.5pt;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 16pt 0 1pt;
+  padding: 0;
+  border: none;
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+/* Название должности. Обёрнуто в ** в markdown не ради жирности, а чтобы
+   быть одним flex-элементом: ссылка [Clario](...) внутри заголовка иначе
+   становится самостоятельным flex-элементом и space-between рвёт строку. */
+h3 > strong {
+  flex: 1 1 auto;
+  font-weight: 700;
+}
+
+/* Даты — единственный курсив внутри заголовка. Другая гарнитура вместо
+   цветового выделения; моноширинная ещё и выравнивает столбец справа. */
+h3 > em {
+  flex: none;
+  font-family: "SF Mono", Menlo, ui-monospace, monospace;
+  font-size: 8.5pt;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* Строка со стеком технологий — сразу под заголовком */
+h3 + p {
+  margin: 0 0 3pt;
+}
+
+p {
+  margin: 0 0 3pt;
+  orphans: 2;
+  widows: 2;
+}
+
+/* Курсивные строки-абзацы: стек технологий под каждой должностью (9 шт.),
+   строка контекста платформы и подпись про рекомендательное письмо.
+   :only-child оставлен намеренно — чтобы курсив внутри обычного
+   предложения не посерел, если такой появится. */
+p > em:only-child {
+  color: #555;
+}
+
+/* Контекст платформы — единственная цитата в документе. Отдельный тип блока,
+   потому что курсивом он сливался со строкой стека прямо над ним. */
+blockquote {
+  margin: 4pt 0 5pt;
+  padding: 1pt 0 1pt 8pt;
+  border-left: 2px solid #c8c8c8;
+  color: #444;
+  font-size: 9.5pt;
+  font-style: normal;
+  break-inside: avoid;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+ul {
+  margin: 2pt 0 4pt;
+  padding-left: 15pt;
+}
+
+li {
+  margin: 0 0 1.5pt;
+  break-inside: avoid;
+}
+
+li > ul {
+  margin: 1.5pt 0 0;
+}
+
+/* Разделители между секциями почти не нужны — секции уже размечены h2 */
+hr {
+  display: none;
+}
+
+a {
+  color: #1a4f8a;
+  text-decoration: none;
+}
+
+/* Блок должности старается не разрываться между страницами */
+h3 + p,
+h3 + p + p {
+  break-inside: avoid;
+}
+
+/* * { outline: 1px solid rgba(255,0,0,.3); } */
