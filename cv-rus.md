@@ -1,10 +1,11 @@
 # Андрей Хатаев
 ## Senior Full-stack Engineer — Ruby on Rails, React, TypeScript
 
-9+ лет в Ruby, 20 лет в разработке. Платформа для клинических исследований, финтех, ипотечные пайплайны. Отвечаю за архитектуру и производительность; вёл команду из 4 инженеров.
+9+ лет в Ruby, 20 лет в разработке. Платформа для клинических исследований, финтех, ипотечные пайплайны. Есть опыт управления небольшой командой из 4 инженеров. С интересом рассмотрю проекты использующие Python, Go, TypeScript как в дополнение к Ruby, так и в качестве основного языка. 
 
 **Email:** khataev@gmail.com<br>
 **LinkedIn:** [linkedin.com/in/andrey-khataev](https://www.linkedin.com/in/andrey-khataev/)<br>
+**GitHub:** [github.com/khataev](https://github.com/khataev)<br>
 **Телефон:** +7 909 918-58-80<br>
 **Telegram:** @khataev<br>
 **Местоположение:** Москва, Россия
@@ -19,6 +20,7 @@
 - **Очереди и фоновые задачи:** Sidekiq (Redis), Sneakers/Kicks (RabbitMQ), Shoryuken (AWS SQS)
 - **Инфраструктура и DevOps:** AWS, Docker, GitLab CI/CD, GitHub Actions, Heroku, Render, Linux, Git
 - **Архитектура и практики:** REST API, микросервисная архитектура, TDD, code review, Agile/Scrum
+- **AI и автоматизация разработки:** SDD / OpenSpec, оркестрация агентного цикла в Archon, интеграция с трекером задач (Planka) и Github.
 
 ---
 
@@ -26,7 +28,11 @@
 
 ### **Перерыв в работе** *Май 2026 - настоящее время*
 
-Осознанный отдых в летние месяцы после пяти с половиной лет непрерывной работы над платформой; параллельно — собственные проекты и освоение AI-first разработки по методологии OpenSpec.
+После пяти с половиной лет работы на предыдущем проекте взял перерыв с отдыхом в летние месяцы; параллельно развиваю собственные проекты и практику агентной разработки:
+
+- Применял SDD с OpenSpec в [Eazy NDFL](https://eazy-ndfl.com/) (Ruby on Rails / React) и [HMBee Bot](https://github.com/khataev/hmbee-bot) (TypeScript / Node.js)
+- Настроил MVP полного цикла агентной разработки с Archon: карточка в Planka → исследование (Explore) → proposal/design/tasks → коммит и черновой PR → реализация (Apply) → независимая проверка (Verify) → архивация → обновление PR и карточки. Подробнее тут - [https://khataev.github.io/archon-pipeline-showcase/](https://khataev.github.io/archon-pipeline-showcase/).
+
 
 ### **Senior Full-stack разработчик, тимлид — [Clario](https://clario.com/), TAP Mobile** *Октябрь 2024 - Апрель 2026 | Удалённо*
 
