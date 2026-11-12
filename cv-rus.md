@@ -33,6 +33,8 @@
 - Применял SDD с OpenSpec в [Eazy NDFL](https://eazy-ndfl.com/) (Ruby on Rails / React) и [HMBee Bot](https://github.com/khataev/hmbee-bot) (TypeScript / Node.js)
 - Настроил MVP полного цикла агентной разработки с Archon: карточка в Planka → исследование (Explore) → proposal/design/tasks → коммит и черновой PR → реализация (Apply) → независимая проверка (Verify) → архивация → обновление PR и карточки. Подробнее тут - [https://khataev.github.io/archon-pipeline-showcase/](https://khataev.github.io/archon-pipeline-showcase/).
 
+- В учебных целях [воспроизвел](https://github.com/khataev/analyze-youtube-comments) backend сервиса по анализу комментариев на youtube на разных языках и стеках (Python + FastAPI, Go + net/http, TypeScript + Nest.JS).
+
 
 ### **Senior Full-stack разработчик, тимлид — [Clario](https://clario.com/), TAP Mobile** *Октябрь 2024 - Апрель 2026 | Удалённо*
 
